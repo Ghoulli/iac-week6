@@ -16,7 +16,10 @@ on:
 jobs:
   validate-terraform-azure:
     name: Validate Terraform Azure
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./opdracht/azure
 
     steps:
       - name: Check out repository

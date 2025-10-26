@@ -1,6 +1,6 @@
 ---
 - name: Configure Web Servers
-  hosts: all # Target all hosts in the inventory
+  hosts: all
   become: true
   gather_facts: true
 
@@ -16,4 +16,4 @@
       ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 360
-        
+

@@ -1,0 +1,39 @@
+# This workflow lints Ansible playbooks using ansible-lint.
+# It runs on any push or pull request to the 'main' branch.
+
+name: 2 - Ansible Lint
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/ansible/playbook.yml' # Only run if files in 'ansible/' change
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/ansible/playbook.yml'
+
+jobs:
+  lint-ansible:
+    name: Lint Ansible Playbooks
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./opdracht/ansible
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check Ansible Syntax
+        run: |
+          ansible-playbook ./ansible/playbook.yml --syntax-check
+
+      - name: Run Playbook in Check Mode
+        run: |
+          ansible-playbook ./ansible/playbook.yml -i ./ansible/inventory.ini --check
+
+      - name: Execute Ansible Playbook
+        run: |
+          ansible-playbook ./ansible/playbook.yml -i ./ansible/inventory.ini

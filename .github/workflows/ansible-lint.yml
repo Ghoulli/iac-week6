@@ -32,12 +32,12 @@ jobs:
 
       - name: Check Ansible Syntax
         run: |
-          ansible-playbook ./opdracht/ansible/playbook.yml --syntax-check
+          ansible-playbook ./playbook.yml --syntax-check
 
       - name: Run Playbook in Check Mode
         run: |
-          ansible-playbook ./opdracht/ansible/playbook.yml -i ./opdracht/ansible/inventory.ini --check
+          ansible-playbook ./playbook.yml -i ./inventory.ini --check
 
       - name: Execute Ansible Playbook
         run: |
-          ansible-playbook ./opdracht/ansible/playbook.yml -i ./opdracht/ansible/inventory.ini
+          ansible-playbook ./playbook.yml -i ./inventory.ini

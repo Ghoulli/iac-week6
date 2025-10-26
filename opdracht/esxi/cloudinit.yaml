@@ -1,11 +1,11 @@
 #cloud-config
 users:
   - default
-  - name: ${username}
+  - name: iacuser
     sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
     ssh_authorized_keys:
-      - ${ssh_key}
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAe8Ilbjo2qjAKgneNmebSczNm06KuTrUbhZTlOj9PQe student@DESKTOP-1NUD89T
 
 write_files:
   - path: /home/iacuser/.ssh/id_rsa_azure

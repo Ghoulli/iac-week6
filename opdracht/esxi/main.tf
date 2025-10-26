@@ -18,14 +18,6 @@ locals {
   webserver_names = ["esxi-web-01", "esxi-web-02"]
 }
 
-data "template_file" "cloudinit" {
-  template = file("${path.module}/cloudinit.yaml")  
-  vars = {
-    ssh_key  = var.ssh_public_key
-    username = var.vm_user
-  }
-}
-
 #12
 # Create the 2 web server VMs
 resource "esxi_guest" "webservers" {
@@ -40,12 +32,10 @@ resource "esxi_guest" "webservers" {
   network_interfaces {
     virtual_network = var.network_name
   }
-
-  ovf_properties {
-    key   = "user-data"
-    value = base64encode(data.template_file.cloudinit.rendered)
+  customization {
+    cloudinit = filebase64("cloudinit.yaml")
   }
-  
+    
   provisioner "local-exec" {
     command = "echo ${self.ip_address} >> /vm_ips.txt"
   }

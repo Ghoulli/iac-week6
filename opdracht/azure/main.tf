@@ -99,7 +99,6 @@ data "template_file" "cloudinit_azure" {
     # Changed to read from a local file
     ssh_key  = var.ssh_public_key_path
     username = var.admin_username
-    #private_key = file(pathexpand("~/.ssh/id_rsa_azure"))
   }
 }
 
@@ -161,4 +160,4 @@ resource "local_file" "ansible_inventory_azure" {
   ]
 }
 
-#123
+#1234

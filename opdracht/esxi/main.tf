@@ -14,30 +14,48 @@ provider "esxi" {
   esxi_password = var.esxi_password
 }
 
-locals {
-  webserver_names = ["esxi-web-01", "esxi-web-02"]
-}
-
-#12
-# Create the 2 web server VMs
-resource "esxi_guest" "webservers" {
-  count      = 2
-  guest_name = local.webserver_names[count.index]
-  disk_store = var.disk_store
-  ovf_source = var.ovf_source
-  memsize    = var.memory
-  numvcpus   = var.vcpu
-  power      = "on"
+resource "esxi_guest" "webserver1" {
+  guest_name   = "webserver1"
+  disk_store   = var.disk_store
+  ovf_source   = var.ubuntu_ova_url
+  memsize      = 2048
+  numvcpus     = 1
 
   network_interfaces {
     virtual_network = var.network_name
   }
-  customization {
-    cloudinit = filebase64("cloudinit.yaml")
+
+  guestinfo = {
+    "metadata"          = filebase64("metadata-webserver1.yaml")
+    "metadata.encoding" = "base64"
+    "userdata"          = filebase64("userdata-webserver1.yaml")
+    "userdata.encoding" = "base64"
   }
-    
+
   provisioner "local-exec" {
-    command = "echo ${self.ip_address} >> /vm_ips.txt"
+    command = "echo ${self.ip_address} webserver1 >> vm_ips.txt"
   }
 }
 
+resource "esxi_guest" "webserver2" {
+  guest_name   = "webserver2"
+  disk_store   = var.disk_store
+  ovf_source   = var.ubuntu_ova_url
+  memsize      = 2048
+  numvcpus     = 1
+
+  network_interfaces {
+    virtual_network = var.network_name
+  }
+
+  guestinfo = {
+    "metadata"          = filebase64("metadata-webserver2.yaml")
+    "metadata.encoding" = "base64"
+    "userdata"          = filebase64("userdata-webserver2.yaml")
+    "userdata.encoding" = "base64"
+  }
+
+  provisioner "local-exec" {
+    command = "echo ${self.ip_address} webserver2 >> vm_ips.txt"
+  }
+}

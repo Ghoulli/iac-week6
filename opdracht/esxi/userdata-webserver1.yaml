@@ -1,6 +1,5 @@
 #cloud-config
 users:
-  - default
   - name: iacuser
     sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash

@@ -1,0 +1,84 @@
+#cloud-config
+users:
+  - name: iacuser
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAe8Ilbjo2qjAKgneNmebSczNm06KuTrUbhZTlOj9PQe student@DESKTOP-1NUD89T
+
+write_files:
+  - path: /home/iacuser/.ssh/id_rsa_azure
+    content: |
+      -----BEGIN OPENSSH PRIVATE KEY-----
+      b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
+      NhAAAAAwEAAQAAAgEAnphEeLziQbqHJdulPgmj1v7Sc2GWLm4VTdd3LjSvuwTnOqm64Qzh
+      EVBUjyyDltuQG3XKcEWmE5uls2X4oG2Xld0BA22jIpUd+vAw4rfEGiPJ4JvH6fqBM8pfbs
+      uVA2Akq6ScYReZeukENVMTXiH1cj2Yq07OiUSuppVBCccdIhqv2/CzBIurzFzf391zSPP9
+      m4M9+D1qM/6KvhcULkkHD/EKecMndxFj6Tpq2Pezet3hvYBcpOxKAT03lHv6m03BCzFwJQ
+      TnOknuDAkLvItuCKthpnR9vwXTkXNwvBwI/QL59zEo21RFtOdOZ2QW5ZKmBDN/adU5jNat
+      qNdMpzpP8QqIemYwlx9i6LZZ2ty9Qb43uBZCUALGz7yPKOhqqSmVHQORWPUIZrydzojQAz
+      9deQ9U3TQ4QaZVBblC1+QqBWT00oI+eDedDc+BkigB53kVcXF8/yjXI6TIKcAi4S1DpESh
+      3C9DhujDP88sx3uT+iqRS4WmRaps3fGC+COyj09m8XFPkG0GscT5RiudIDl6uKQhwAjBXE
+      NoWpTzHkH8xQDd3E5XttzkGISEGRD153PrRtNgJ8IdNBozF5784wMG6UKVx/nZxICiI5mu
+      Kr5LLZhuspNlS6ql+ASZ3ROvwFp5EulMeWFNWhuWcvt7l/rfeTQxwt1nh3DyKHuACLr1W8
+      EAAAdQjtuLd47bi3cAAAAHc3NoLXJzYQAAAgEAnphEeLziQbqHJdulPgmj1v7Sc2GWLm4V
+      Tdd3LjSvuwTnOqm64QzhEVBUjyyDltuQG3XKcEWmE5uls2X4oG2Xld0BA22jIpUd+vAw4r
+      fEGiPJ4JvH6fqBM8pfbsuVA2Akq6ScYReZeukENVMTXiH1cj2Yq07OiUSuppVBCccdIhqv
+      2/CzBIurzFzf391zSPP9m4M9+D1qM/6KvhcULkkHD/EKecMndxFj6Tpq2Pezet3hvYBcpO
+      xKAT03lHv6m03BCzFwJQTnOknuDAkLvItuCKthpnR9vwXTkXNwvBwI/QL59zEo21RFtOdO
+      Z2QW5ZKmBDN/adU5jNatqNdMpzpP8QqIemYwlx9i6LZZ2ty9Qb43uBZCUALGz7yPKOhqqS
+      mVHQORWPUIZrydzojQAz9deQ9U3TQ4QaZVBblC1+QqBWT00oI+eDedDc+BkigB53kVcXF8
+      /yjXI6TIKcAi4S1DpESh3C9DhujDP88sx3uT+iqRS4WmRaps3fGC+COyj09m8XFPkG0Gsc
+      T5RiudIDl6uKQhwAjBXENoWpTzHkH8xQDd3E5XttzkGISEGRD153PrRtNgJ8IdNBozF578
+      4wMG6UKVx/nZxICiI5muKr5LLZhuspNlS6ql+ASZ3ROvwFp5EulMeWFNWhuWcvt7l/rfeT
+      Qxwt1nh3DyKHuACLr1W8EAAAADAQABAAACAAI8oDfvug/hQ0dhFLCOTuruXHuCHy3NIax1
+      DdpEpfcw94NCoj8gVmBPI2eC4jbo0THXScv8P35mo0H80zKNY9DvoAmzVyoFXmSL/18t5l
+      cpYA80mJo6jUNKEb8soeUSoGccrZP0/ZYtM9ZTXfeQP7elGhfNxxNKjl1icjC4HTdo7EgM
+      L1+GCh3vcBI75loGDvKi5DyHE+NjLgPGVuOG5ibvEw2/7I49BuK4Od+Q3CLZ1Erpmjo9QZ
+      dI4hV3C4Ql5u4d0WNu8UVHhlL8dwI+w9uIHJrOE86eP2tSwdP1X+8URqrvh5BTB59TOoOH
+      dtyKt/VhNeUr5mGPzufjDtK2UNWjdpzQoCvbs6G38DVaUYnkqetTZWI4DOjlFjMcXhRJ9e
+      SC5ApwDz8MLfqepmf2DN0VYL60gSwCejBWUOmqd/KGLJamwxJ2p5eSw8kYoAH+9tm/Qn8A
+      UN+1eQhBSZwYlXXANjQ9kvJ7+h+c08lP97WndemV3nhgyJqNnyWjCyUD2fGFlEoZbZxmka
+      ndOIrtkNal03AV2a9AdzmSwn6TUH5WCSVMZKyrmn2duaPiwvG/XFoj3SQrtNGHiehBvt3+
+      12ZRf4wt08fhS75JTFIdpMmdJg8vadDYlY4k6c9dQq+yv87LIIzafSKxrSP+i3/q5L2lz1
+      wSOzDeeplW/KodXCVdAAABAGpZV/6iN+Mpa68BeskX9JwFPz2RSsPrWCgEqK+8QEF1Ex1i
+      CD/vB1qu7cX6jwAxffw6Kx+AbwfFlpDY9ckpwZzNAPc+bYaCRih+T1KeK+M1thCg2bLxYA
+      mADx/3Pyn1nDEeLbwooyE9tHoadjePQytFuT0JMjMisvpBk/7zk4Tox2pGCDkxp7giwi+f
+      CYKGVZr8xAPFsZMXl26N9ea53eEvWk9oorK90Rdf8Csta+l6HEe/+bUUP9OLAaXpkqCF/t
+      HJ+APSQ7GPgUjPtBEjw6y4mg71dVVKp1bN5w4BdzLOAzCOVbgbkLjSnLTMZP3hvlryltiH
+      AJg1EW7ZC4mUAGwAAAEBANODYOjXlp3jNZe2mPaB/ChQsASQoGvgxZ/qUeWlaIgXXErZpi
+      1YcNrt1OBR7dHfuiY8TjLQNgodsCddDJ8pe3wyDKVhuItctbj42pZmPgA/Jhjg/YZhh6sP
+      j/OoyxtR8f9HKmgI7AIt7t7zWoOYiyPQ0JqxNxDhpeKwgLqoNRbnkv+JlNNbKOqy/aMxkw
+      kJhWTJwFuZVaAViuxlgxfqLM3BXzQdOzeG6M0IDPuIi3qQy3Bwb1eicAB6D/WiMC6E6W4n
+      jO8XsjDasvj0WBv099J93jDjumqsRLENulbLgM1G++zrd5oU2z1pyerLwHZV5oY7zvcooz
+      VPlndS0x8nNGcAAAEBAL/zkwHr1ue+oxU9z44Y3t76g4Eca7UNGwHYZDGdpootNmVLClze
+      pORzGbQGdDR8mdLlBZDnZSoOHoAaa7TQoJYDEzichlOEgSnSVWma76RcmxQ55Dyql+jmAT
+      MUnSvS9C9lF/G8Y59r+oqnzN0cfwrvFqC3sF1Dw2WXrhpCvjP8Q+WAR2FATrv56HYHQIjb
+      H33phIkfmLyr41OZ4k2BAySTfMS/rm/GRtQ3j+VgSy4KNecmu5jTmozocjOFa+rslVJ7nS
+      pXneBcvioFOZRUwQHyNtmwfF4NcIrb6iB9UwCjfdjVVYAjZXCjSfi7WJAUXOPH04Q5DDTE
+      Id8QMXKPFZcAAAAXc3R1ZGVudEBERVNLVE9QLTFOVUQ4OVQBAgME
+      -----END OPENSSH PRIVATE KEY-----
+
+# Install Docker prerequisites and Docker
+packages:
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+
+runcmd:
+  # Add Docker's official GPG key
+  - chown -R ${username}:${username} /home/${username}
+  - chmod 0400 ~/.ssh/id_rsa_azure
+  - mkdir -p /etc/apt/keyrings
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+  # Set up the repository
+  - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+  # Install Docker Engine
+  - apt-get update
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+  # Add vm_user to the docker group
+  - usermod -aG docker ${username}

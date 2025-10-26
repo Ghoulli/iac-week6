@@ -4,6 +4,9 @@
   become: true
   gather_facts: true
 
+  roles:
+    - Ghoulli.simple_apache_role
+
   tasks:
     - name: Wait for SSH connection
       ansible.builtin.wait_for_connection:
@@ -12,31 +15,5 @@
     - name: Ensure apt cache is updated
       ansible.builtin.apt:
         update_cache: true
-        cache_valid_time: 3600
-
-    - name: Install Apache2 (using FQCN)
-      ansible.builtin.apt:
-        name: apache2
-        state: present
-
-    - name: Ensure Apache2 is started and enabled
-      ansible.builtin.service:
-        name: apache2
-        state: started
-        enabled: true
-
-    - name: Copy Docker Compose file to server
-      ansible.builtin.copy:
-        src: ./docker-compose.yml
-        dest: /home/iacuser/docker-compose.yml
-        owner: iacuser
-        group: iacuser
-        mode: '0644'
-
-    - name: Run Docker Compose (requires docker-compose-plugin)
-      ansible.builtin.command:
-        cmd: docker compose -f /home/iacuser/docker-compose.yml up -d
-      register: compose_up
-      changed_when: compose_up.rc == 0
-      # We must run this as the user in the docker group
-      become: false
+        cache_valid_time: 360
+        

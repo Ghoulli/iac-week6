@@ -4,7 +4,6 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-inventory.ini
 
 # Crash log files
 crash.log

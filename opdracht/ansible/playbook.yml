@@ -1,6 +1,6 @@
 ---
 - name: Configure Web Servers
-  hosts: all #12
+  hosts: all
   become: true
   gather_facts: true
 

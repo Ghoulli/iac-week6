@@ -5,7 +5,5 @@ services:
     image: httpd:latest
     container_name: apache_web_server
     ports:
-      - "8080:80" # Map host port 8080 to container port 80.
-    volumes:
-      - ./website:/usr/local/apache2/htdocs/
+      - "8080:80" # Map host port 8080 to container port 80..
 

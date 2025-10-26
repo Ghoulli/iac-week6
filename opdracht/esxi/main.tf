@@ -17,7 +17,7 @@ provider "esxi" {
 resource "esxi_guest" "webserver1" {
   guest_name   = "webserver1"
   disk_store   = var.disk_store
-  ovf_source   = var.ubuntu_ova_url
+  ovf_source   = var.ovf_source
   memsize      = 2048
   numvcpus     = 1
 
@@ -40,7 +40,7 @@ resource "esxi_guest" "webserver1" {
 resource "esxi_guest" "webserver2" {
   guest_name   = "webserver2"
   disk_store   = var.disk_store
-  ovf_source   = var.ubuntu_ova_url
+  ovf_source   = var.ovf_source
   memsize      = 2048
   numvcpus     = 1
 

@@ -97,7 +97,7 @@ data "template_file" "cloudinit_azure" {
 
   vars = {
     # Changed to read from a local file
-    ssh_key  = file(var.ssh_public_key_path)
+    ssh_key  = var.ssh_public_key_path
     username = var.admin_username
     #private_key = file(pathexpand("~/.ssh/id_rsa_azure"))
   }

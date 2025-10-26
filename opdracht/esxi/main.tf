@@ -5,7 +5,7 @@ terraform {
     }
   }
 }
-
+#12
 provider "esxi" {
   esxi_hostname = var.esxi_hostname
   esxi_hostport = var.esxi_hostport

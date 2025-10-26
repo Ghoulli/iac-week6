@@ -64,7 +64,7 @@ variable "ssh_key_name" {
   default     = "Win11WSL-Azure"
 }
 
-variable "ssh_public_key_path" {
+variable "ssh_public_key" {
   description = "Path to your SSH public key file"
   type        = string
   default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCemER4vOJBuocl26U+CaPW/tJzYZYubhVN13cuNK+7BOc6qbrhDOERUFSPLIOW25AbdcpwRaYTm6WzZfigbZeV3QEDbaMilR368DDit8QaI8ngm8fp+oEzyl9uy5UDYCSrpJxhF5l66QQ1UxNeIfVyPZirTs6JRK6mlUEJxx0iGq/b8LMEi6vMXN/f3XNI8/2bgz34PWoz/oq+FxQuSQcP8Qp5wyd3EWPpOmrY97N63eG9gFyk7EoBPTeUe/qbTcELMXAlBOc6Se4MCQu8i24Iq2GmdH2/BdORc3C8HAj9Avn3MSjbVEW0505nZBblkqYEM39p1TmM1q2o10ynOk/xCoh6ZjCXH2Lotlna3L1Bvje4FkJQAsbPvI8o6GqpKZUdA5FY9QhmvJ3OiNADP115D1TdNDhBplUFuULX5CoFZPTSgj54N50Nz4GSKAHneRVxcXz/KNcjpMgpwCLhLUOkRKHcL0OG6MM/zyzHe5P6KpFLhaZFqmzd8YL4I7KPT2bxcU+QbQaxxPlGK50gOXq4pCHACMFcQ2halPMeQfzFAN3cTle23OQYhIQZEPXnc+tG02Anwh00GjMXnvzjAwbpQpXH+dnEgKIjma4qvkstmG6yk2VLqqX4BJndE6/AWnkS6Ux5YU1aG5Zy+3uX+t95NDHC3WeHcPIoe4AIuvVbwQ== student@DESKTOP-1NUD89T"
